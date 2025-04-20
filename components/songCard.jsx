@@ -46,6 +46,7 @@ export default function songCard() {
                 <Text style={styles.title}>{songs[index].title}</Text>
                 <Text style={styles.artist}>{songs[index].artist}</Text>
             </View>
+            <Controller/>
         </View>
     );
 }
