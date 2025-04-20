@@ -25,6 +25,19 @@ export default function songCard() {
             </view>
         )
     }
+
+    const goNext = () => {
+        slider.current.scrollToOffset({
+            offset: (index + 1) * width,
+        })
+    }
+
+    const goPrev = () => {
+        slider.current.scrollToOffset({
+            offset: (index - 1) * width,
+        })
+    }
+
     return (
         <View style={styles.container}>
             <SafeAreaView style={{ height: 320 }}>
@@ -46,7 +59,7 @@ export default function songCard() {
                 <Text style={styles.title}>{songs[index].title}</Text>
                 <Text style={styles.artist}>{songs[index].artist}</Text>
             </View>
-            <Controller/>
+            <Controller onNext={goNext} onPrev={goPrev}/>
         </View>
     );
 }
